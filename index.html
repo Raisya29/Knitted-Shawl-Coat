@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knitted Shawl Coat | Bestbrand Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wine: '#722f37',
+                        burgundy: '#800020',
+                        rose: '#e8b4b8',
+                        cream: '#f5f5dc',
+                        accent: '#ffffff'
+                    },
+                    fontFamily: {
+                        heading: ['Cormorant Garamond', 'serif'],
+                        body: ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for premium styling */
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.8) 0%, rgba(114, 47, 55, 0.9) 100%);
+        }
+        
+        .product-showcase {
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8b4b8 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #800020 0%, #722f37 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.4);
+        }
+        
+        .social-proof-popup {
+            position: fixed;
+            top: 20px;
+            right: -400px;
+            z-index: 9999;
+            transition: right 0.5s ease-in-out;
+        }
+        
+        .social-proof-popup.show {
+            right: 20px;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .price-discount {
+            color: #800020;
+            font-weight: 700;
+        }
+        
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 5px;
+        }
+        
+        .trust-badge i {
+            margin-right: 8px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            min-width: 70px;
+            text-align: center;
+        }
+        
+        .countdown-value {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .countdown-box {
+                min-width: 50px;
+                padding: 5px;
+            }
+            
+            .countdown-value {
+                font-size: 18px;
+            }
+            
+            .countdown-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-cream text-wine">
+    <!-- Social Proof Popup -->
+    <div id="socialProofPopup" class="social-proof-popup hidden">
+        <div class="glassmorphism rounded-lg p-4 shadow-lg border-l-4 border-burgundy">
+            <div class="flex items-center">
+                <img src="https://cdn.hotishop.com/image/9c21b1f5fdef6d2dc3f0ad05de018c2b136db496-700.jpeg" alt="Customer" class="w-10 h-10 rounded-full object-cover mr-3">
+                <div>
+                    <p class="font-semibold text-sm" id="customerName">Vina</p>
+                    <p class="text-xs" id="customerLocation">Jakarta</p>
+                </div>
+                <p class="text-xs ml-2">baru saja memesan</p>
+                <p class="text-xs font-semibold ml-1">Knitted Shawl Coat</p>
+            </div>
+            <p class="text-xs text-right mt-2" id="timestamp">5 menit yang lalu</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-accent py-20 px-4 md:px-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="font-heading text-4xl md:text-6xl font-bold mb-4">Knitted Shawl Coat</h1>
+                    <p class="text-xl mb-6">Paduan hangat dan stylish! Mantel rajut dengan desain shawl ini memberi kesan elegan sekaligus cozy.</p>
+                    <div class="mb-6">
+                        <span class="price-original text-lg mr-3">Rp 315.000</span>
+                        <span class="price-discount text-2xl">Rp 199.000</span>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-burgundy text-accent px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                            Stok hanya tersisa 9 pcs
+                        </div>
+                    </div>
+                    <button class="cta-button text-accent font-bold py-3 px-8 rounded-full text-lg mb-6">
+                        Pesan Sekarang
+                    </button>
+                    <div class="flex flex-wrap">
+                        <div class="trust-badge">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Pengiriman Cepat</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Garansi 7 Hari</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Return Mudah</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn.hotishop.com/image/9c21b1f5fdef6d2dc3f0ad05de018c2b136db496-700.jpeg" alt="Knitted Shawl Coat" class="rounded-lg shadow-xl w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="product-showcase py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl text-center mb-12">Galeri Produk</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://cdn.hotishop.com/image/d73b6e153fdf1036330538c1f1257602f2384897-600.gif" alt="Product 1" class="rounded-lg shadow-md gallery-img">
+                    <img src="https://cdn.hotishop.com/image/13ae3b87fe997540bbe3b82989d30c696eb41ffa-600.png" alt="Product 2" class="rounded-lg shadow-md gallery-img">
+                    <img src="https://cdn.hotishop.com/image/318f77225ca0fc616270ad00a5bf7e2dfe23a9cc-600.png" alt="Product 3" class="rounded-lg shadow-md gallery-img">
+                    <img src="https://cdn.hotishop.com/image/92930a5146407a3156209033537844f47424b5ef-600.gif" alt="Product 4" class="rounded-lg shadow-md gallery-img">
+                </div>
+                <div>
+                    <h3 class="font-heading text-2xl mb-4">Detail Produk</h3>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-burgundy mr-2"></i>
+                            <span>Material berkualitas tinggi yang nyaman dipakai</span>
+                        </li>
+                        <li class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-burgundy mr-2"></i>
+                            <span>Desain shawl elegan yang cocok untuk segala kesempatan</span>
+                        </li>
+                        <li class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-burgundy mr-2"></i>
+                            <span>Mudah dipadukan dengan berbagai outfit</span>
+                        </li>
+                        <li class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-burgundy mr-2"></i>
+                            <span>Ringan dan tidak terasa berat saat dipakai</span>
+                        </li>
+                        <li class="flex items-center mb-3">
+                            <i class="fas fa-check-circle text-burgundy mr-2"></i>
+                            <span>Ukuran Allsize Fit M/L yang pas untuk berbagai ukuran tubuh</span>
+                        </li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="font-heading text-xl mb-2">Spesifikasi</h4>
+                        <ul>
+                            <li class="flex justify-between border-b py-2">
+                                <span>Panjang Badan</span>
+                                <span>53cm</span>
+                            </li>
+                            <li class="flex justify-between border-b py-2">
+                                <span>Lebar Badan</span>
+                                <span>59cm</span>
+                            </li>
+                            <li class="flex justify-between border-b py-2">
+                                <span>LD</span>
+                                <span>120cm</span>
+                            </li>
+                            <li class="flex justify-between border-b py-2">
+                                <span>Lebar Bahu</span>
+                                <span>21cm</span>
+                            </li>
+                            <li class="flex justify-between border-b py-2">
+                                <span>Panjang Tangan</span>
+                                <span>56cm</span>
+                            </li>
+                            <li class="flex justify-between py-2">
+                                <span>Lebar Tangan</span>
+                                <span>19cm</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl text-center mb-12">Mengapa Memilih Knitted Shawl Coat?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-cream p-6 rounded-lg shadow-md text-center">
+                    <div class="text-burgundy text-4xl mb-4">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3 class="font-heading text-xl mb-2">Hangat & Nyaman</h3>
+                    <p>Bahan berkualitas tinggi yang memberikan kehangatan maksimal tanpa mengorbankan kenyamanan.</p>
+                </div>
+                <div class="feature-card bg-cream p-6 rounded-lg shadow-md text-center">
+                    <div class="text-burgundy text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="font-heading text-xl mb-2">Desain Elegan</h3>
+                    <p>Desain shawl yang modern dan elegan cocok untuk segala kesempatan formal maupun casual.</p>
+                </div>
+                <div class="feature-card bg-cream p-6 rounded-lg shadow-md text-center">
+                    <div class="text-burgundy text-4xl mb-4">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="font-heading text-xl mb-2">Mudah Dipadukan</h3>
+                    <p>Warna dan desain yang versatile membuatnya mudah dipadukan dengan berbagai outfit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Countdown -->
+    <section class="py-16 px-4 bg-rose">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-heading text-3xl md:text-4xl text-white mb-6">Penawaran Spesial Hari Ini!</h2>
+            <p class="text-xl text-white mb-8">Hanya tersisa 9 pcs buruan di order sebelum kehabisan</p>
+            
+            <div class="countdown-timer">
+                <div class="countdown-box">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+            
+            <div class="my-8">
+                <span class="price-original text-2xl mr-4">Rp 315.000</span>
+                <span class="price-discount text-3xl">Rp 199.000</span>
+            </div>
+            
+            <button class="cta-button text-accent font-bold py-4 px-12 rounded-full text-xl mb-6">
+                Pesan Sekarang - Hemat Rp 116.000
+            </button>
+            
+            <div class="flex flex-wrap justify-center mt-8">
+                <div class="flex items-center mx-4 my-2">
+                    <i class="fas fa-shield-alt text-white mr-2"></i>
+                    <span class="text-white">Garansi 7 Hari</span>
+                </div>
+                <div class="flex items-center mx-4 my-2">
+                    <i class="fas fa-truck text-white mr-2"></i>
+                    <span class="text-white">Pengiriman cepat</span>
+                </div>
+                <div class="flex items-center mx-4 my-2">
+                    <i class="fas fa-sync-alt text-white mr-2"></i>
+                    <span class="text-white">Return Mudah</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl text-center mb-12">Form Pemesanan</h2>
+            <div class="glassmorphism rounded-xl p-8">
+                <!-- OrderOnline Embed Code -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" data-username="vera" data-product-slug="knitted-shawl-coat" data-product-id="68aee78e3af53835200983d6" id="oo-embed-form-knitted-shawl-coat-7792" data-origin="orderonline">
+                        <div class="ooef-loader">
+                            <style>
+                                .ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}
+                                @keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                @-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                .ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}
+                                .ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}
+                                .ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}
+                                @-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                                @keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                            </style>
+                            <div aria-live="polite" role="status">
+                                <div>Loading...</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <script>
+                    if (typeof xLogError != 'function') {
+                        var xLogError = function (error) {
+                            var req = new XMLHttpRequest();
+                            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                            req.open('POST', 'https://api.orderonline.id/log', true);
+                            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            req.send(params);
+                        };
+                    }
+                    try {
+                        if (typeof xEmbedScript != 'function') {
+                            var xEmbedScript = function () {
+                                !function(w, d, e, v, id, t, s) {
+                                    if (d.getElementById(id)) return;
+                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                                }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                            };
+                        }
+                        if (typeof xEmbedInit != 'function') {
+                            var xEmbedInit = function (w, n) {
+                                if (w.ooe) return;
+                                n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                                if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                            };
+                        }
+                        xEmbedInit(window);
+                        ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                        ooe('init', '5f1a7807a9bf807d6c63d963', '68aee78e3af53835200983d6', '68aee78e3af53835200983d7', 'oo-embed-form-knitted-shawl-coat-7792', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                        if (!window.jQuery) {
+                            !function(w, d, e, v, id, t, s) {
+                                if (d.getElementById(id)) return;
+                                t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                t.addEventListener('load', xEmbedScript);
+                                s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                        } else {
+                            xEmbedScript();
+                        }
+                    } catch (e) {
+                        xLogError(e);
+                        throw e;
+                    }
+                </script>
+                <!-- End OrderOnline Embed Code -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Social Proof Popup Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('socialProofPopup');
+            const customerNames = ['Vina', 'Dina', 'Kartika', 'Lestari', 'Putri', 'Maya Sari', 'Rani', 'Permata', 'Lestari F'];
+            const customerCities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang'];
+            let popupInterval;
+            let hideTimeout;
+            
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            
+            function showPopup() {
+                // Random customer data
+                const randomName = customerNames[getRandomInt(0, customerNames.length - 1)];
+                const randomCity = customerCities[getRandomInt(0, customerCities.length - 1)];
+                const randomTime = getRandomInt(1, 15);
+                
+                // Update popup content
+                document.getElementById('customerName').textContent = randomName;
+                document.getElementById('customerLocation').textContent = randomCity;
+                document.getElementById('timestamp').textContent = `${randomTime} menit yang lalu`;
+                
+                // Show popup
+                popup.classList.remove('hidden');
+                setTimeout(() => {
+                    popup.classList.add('show');
+                }, 10);
+                
+                // Set timeout to hide
+                hideTimeout = setTimeout(() => {
+                    popup.classList.remove('show');
+                    setTimeout(() => {
+                        popup.classList.add('hidden');
+                    }, 500);
+                }, 5000);
+            }
+            
+            // Start popup interval
+            popupInterval = setInterval(showPopup, 8000);
+            
+            // Initial popup after 3 seconds
+            setTimeout(showPopup, 3000);
+            
+            // Pause popup on hover
+            popup.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+            });
+            
+            popup.addEventListener('mouseleave', () => {
+                hideTimeout = setTimeout(() => {
+                    popup.classList.remove('show');
+                    setTimeout(() => {
+                        popup.classList.add('hidden');
+                    }, 500);
+                }, 5000);
+            });
+            
+            // Countdown Timer
+            function updateCountdown() {
+                const now = new Date();
+                const endOfDay = new Date();
+                endOfDay.setHours(23, 59, 59, 999);
+                
+                const diff = endOfDay - now;
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call
+        });
+    </script>
+</body>
+</html>
